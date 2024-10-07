@@ -24,6 +24,7 @@ jobs:
         run: echo "Rodando o terceiro passo do deploy" 
   job2:
     name: Segundo fluxo
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: Passo 4
@@ -34,6 +35,7 @@ jobs:
         run: echo "Rodando o sexto passo do deploy"    
   job3:
     name: Terceiro fluxo
+    needs: job2
     runs-on: ubuntu-latest
     steps:
       - name: Passo 7
